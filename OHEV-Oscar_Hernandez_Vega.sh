@@ -41,7 +41,6 @@ realizar_respaldo() {
     echo "Usuario: $USUARIO"
     echo "Base de datos: $BASE_DATOS"
     echo "Destino: $ARCHIVO_BACKUP"
-    echo "Contraseña: $PASSWORD"
 
     mysqldump -u "$USUARIO" -p"$PASSWORD" "$BASE_DATOS" > "$ARCHIVO_BACKUP" 2>/dev/null
 
