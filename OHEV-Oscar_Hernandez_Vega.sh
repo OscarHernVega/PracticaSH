@@ -5,7 +5,7 @@ mostrar_ayuda() {
     echo "Usa: $0 -u <usuario> -d <base_datos> -o <ruta_archivo>"
     echo "  -u    Usuario de la base de datos (obligatorio)"
     echo "  -d    Nombre de la base de datos (obligatorio)"
-    echo "  -o    Ruta y nombre del archivo de respaldo /tmp/OHEV.sql(obligatorio)"
+    echo "  -o    Ruta y nombre del archivo de respaldo /<ruta_del_archivo>/<nombre_del_archivo>.sql(obligatorio)"
     echo "  -h    Mostrar esta ayuda"
     exit 0
 }
