@@ -42,13 +42,11 @@ realizar_respaldo() {
     echo "Base de datos: $BASE_DATOS"
     echo "Destino: $ARCHIVO_BACKUP"
 
-    mysqldump -u "$USUARIO" -p"$PASSWORD" "$BASE_DATOS" > "$ARCHIVO_BACKUP" 2>/dev/null
-
-    if [[ $? -eq 0 ]]; then
-        echo "Respaldo completado exitosamente en $ARCHIVO_BACKUP"
-    else
-        echo "Error: No se pudo realizar el respaldo." >&2
-        exit 1
+    sudo mysqldump -u "$USUARIO" -p"$PASSWORD" "$BASE_DATOS" > "$ARCHIVO_BACKUP" 2>/dev/null
+    result = $?
+    if [ "$result" == 0 ]; then
+        echo "respaldo exitoso: $output.gz"
+        gzip $output
     fi
 }
 
